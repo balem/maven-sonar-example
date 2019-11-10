@@ -1,5 +1,7 @@
 package py.una.pol.mavensonarexample.entity;
 
+import org.hibernate.annotations.ColumnDefault;
+
 import javax.persistence.*;
 
 @Entity

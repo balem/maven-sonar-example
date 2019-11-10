@@ -27,4 +27,7 @@ public class User {
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
     private Set<UserRole> userRole;
 
+    @Column(name = "login_try")
+    private Integer loginTry;
+
 }
