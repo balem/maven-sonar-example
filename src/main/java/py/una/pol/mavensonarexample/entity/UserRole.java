@@ -1,11 +1,16 @@
 package py.una.pol.mavensonarexample.entity;
 
-import org.hibernate.annotations.ColumnDefault;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "user_role", uniqueConstraints = @UniqueConstraint(columnNames = { "role", "username" }))
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class UserRole {
 
     @Id

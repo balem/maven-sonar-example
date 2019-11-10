@@ -8,8 +8,12 @@ spring:
     database-platform: org.hibernate.dialect.MariaDBDialect
     show-sql: true
   datasource:
-    url: jdbc:mysql://localhost:3306/sonarexample?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/sonarexample
     username: sonaruser
     password: sonaruser
+    driver-class-name: org.mariadb.jdbc.Driver
+    initialization-mode: always
   thymeleaf:
     cache: false
+
+userTryLoginLimit: 3
