@@ -1,8 +1,6 @@
 package py.una.pol.mavensonarexample.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -11,11 +9,13 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class UserRole {
 
     @Id
     @GeneratedValue
     @Column(name = "user_role_id", unique = true, nullable = false)
+    @EqualsAndHashCode.Include
     private Integer userRoleId;
 
     @ManyToOne(fetch = FetchType.EAGER)

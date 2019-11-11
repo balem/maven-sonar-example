@@ -29,7 +29,11 @@ public class UserServiceImpl implements UserDetailsService, UserService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        py.una.pol.mavensonarexample.entity.User user = userRepository.findByUsername(username);
+        Optional<py.una.pol.mavensonarexample.entity.User> optionalUser = userRepository.findById(username);
+        if(!optionalUser.isPresent()){
+            throw new UsernameNotFoundException("");
+        }
+        py.una.pol.mavensonarexample.entity.User user = optionalUser.get();
         Set<UserRole> roles = new HashSet<>();
         roles.addAll(user.getUserRole());
         List<GrantedAuthority> authorities = buildGrantedAutorities(roles);
