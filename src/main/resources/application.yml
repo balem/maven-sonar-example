@@ -4,12 +4,12 @@ spring:
   jpa:
     open-in-view: false
     hibernate:
-      ddl-auto: none
-    database-platform: org.hibernate.dialect.MySQLDialect
+      ddl-auto: create-drop
+    database-platform: org.hibernate.dialect.MariaDBDialect
     show-sql: true
   datasource:
-    url: jdbc:mysql://localhost:3306/econtreras?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
-    username: ******
-    password: *****
-  thymeleaf:
-    cache: false
+    url: jdbc:mysql://localhost:3306/sonarexample
+    username: sonaruser
+    password: sonaruser
+    driver-class-name: org.mariadb.jdbc.Driver
+    initialization-mode: always
